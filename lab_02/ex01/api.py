@@ -29,7 +29,7 @@ vigenere_cipher = VigenereCipher()
 
 @app.route('/api/vigenere/encrypt', methods=['POST' ])
 def vigenere_encrypt():
-    data = request. json
+    data = request.json
     plain_text = data['plain_text' ]
     key = data['key' ]
     encrypted_text = vigenere_cipher.vigenere_encrypt(plain_text, key)
@@ -37,7 +37,7 @@ def vigenere_encrypt():
 
 @app.route('/api/vigenere/decrypt', methods=['POST' ])
 def vigenere_decrypt():
-    data = request. json
+    data = request.json
     cipher_text = data['cipher_text']
     key = data['key' ]
     decrypted_text = vigenere_cipher.vigenere_decrypt(cipher_text, key)
