@@ -42,7 +42,7 @@ class PlayFairCipher:
         if row1 == row2:
             encrypted_text += matrix[row1][(col1+1) %5]+ matrix[row2][(col2+1)% 5]
         elif col1 == col2:
-            encrypted_text += matrix[(row1 +1) %5][col1]+ matrix[(row2+1) % 5][co12]
+            encrypted_text += matrix[(row1 +1) %5][col1]+ matrix[(row2+1) % 5][col2]
         else:
             encrypted_text += matrix[row1][col2] + matrix[row2][col1]
         return encrypted_text
@@ -50,7 +50,7 @@ class PlayFairCipher:
     def playfair_decrypt(self, cipher_text, matrix):
         cipher_text = cipher_text. upper()
         decrypted_text = ""
-        decrypted_text1
+        decrypted_text1 = ""
 
         for i in range(0, len(cipher_text), 2):
             pair = cipher_text[i:i+2]
@@ -58,11 +58,11 @@ class PlayFairCipher:
             row2, col2 = self.find_letter_coords(matrix, pair[1])
 
         if row1 == row2:
-            decrypted_text += matrix[row1][(col1 -1) %5]+ matrix[row2][(col2 - 1)% 5]
+            decrypted_text += matrix[row1][(col1 -1) % 5]+ matrix[row2][(col2 - 1)% 5]
         
         elif col1 == col2:
 
-            decrypted_text += matrix[(row1 -1) %5][col1] + matrix[(row2-1) % 5][co12]
+            decrypted_text += matrix[(row1 -1) % 5][col1] + matrix[(row2-1) % 5][col2]
         else:
             decrypted_text += matrix[row1][col2] + matrix[row2] [col1]
             banro =""
