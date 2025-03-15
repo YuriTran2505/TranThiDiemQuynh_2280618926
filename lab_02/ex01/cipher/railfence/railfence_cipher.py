@@ -4,10 +4,10 @@ class RailFenceCipher:
 
     def rail_fence_encrypt(self, plain_text, num_rails):
         rails = [[] for _ in range(num_rails) ]
-        rail index = 0
+        rail_index = 0
         direction = 1 # 1: down, -1: up
         for char in plain_text:
-        rails[rail_index].append(char)
+            rails[rail_index].append(char)
             if rail_index == 0:
                 direction = 1
             elif rail_index == num_rails - 1:
@@ -23,11 +23,11 @@ class RailFenceCipher:
 
         for _ in range(len(cipher_text)):
             rail_lengths[rail_index] += 1
-        if rail index == 0:
+        if rail_index == 0:
             direction = 1
         elif rail_index == num_rails - 1:
             direction = -1
-            rail index += direction
+            rail_index += direction
 
         rails = []
         start = 0
@@ -35,7 +35,7 @@ class RailFenceCipher:
             rails. append(cipher_text[start: start + length])
             start += length
         plain_text = ""
-        rail index = 0
+        rail_index = 0
         direction = 1
 
         for _ in range(len(cipher_text)):
