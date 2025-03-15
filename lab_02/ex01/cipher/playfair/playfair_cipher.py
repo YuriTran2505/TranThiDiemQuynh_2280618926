@@ -1,9 +1,9 @@
 class PlayFairCipher:
     def _init_(self) -> None:
-    pass
+        pass
 
     def _init(self):
-    pass
+        pass
 
     def create_playfair_matrix(self, key):
         key = key. replace ("J", "I") # Chuyển "J" thành "I" trong khóa
@@ -16,16 +16,16 @@ class PlayFairCipher:
 
         for letter in remaining_letters:
             matrix.append(letter)
-        if len(matrix) == 25:
-        break
-    playfair_matrix = [matrix[i:i+5] for i in range(0, len(matrix), 5)]
-    return playfair_matrix
+            if len(matrix) == 25:
+                break
+        playfair_matrix = [matrix[i:i+5] for i in range(0, len(matrix), 5)]
+        return playfair_matrix
 
     def find_letter_coords(self, matrix, letter):
         for row in range(len(matrix)):
-        for col in range(len(matrix[row])):
-        if matrix[row][col] == letter:
-        return row, col
+            for col in range(len(matrix[row])):
+                if matrix[row][col] == letter:
+                    return row, col
 
     def playfair_encrypt(self, plain_text, matrix):
         # Chuyển "J" thành "I" trong văn bản đầu vào
@@ -65,11 +65,11 @@ class PlayFairCipher:
             decrypted_text += matrix[(row1 -1) %5][col1] + matrix[(row2-1) % 5][co12]
         else:
             decrypted_text += matrix[row1][col2] + matrix[row2] [col1]
-    banro =""
+            banro =""
 
         for i in range(0, len(decrypted_text)-2, 2):
-        if decrypted_text[i] == decrypted_text[i+2]:
-            banro += decrypted_text[i]
+            if decrypted_text[i] == decrypted_text[i+2]:
+                banro += decrypted_text[i]
         else:
             banro += decrypted_text[i] + "" + decrypted_text[i+1]
 
@@ -78,7 +78,7 @@ class PlayFairCipher:
         else:
             banro += decrypted_text[-2]
             banro += decrypted_text[-1]
-    return banro
+        return banro
 
 
 
