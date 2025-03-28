@@ -18,6 +18,8 @@ class ECCCipher:
             p.write(vk.to_pem())
 
     def load_keys(self):
+        sk = ecdsa.SigningKey.generate() 
+        vk = sk.get_verifying_key() 
         with open('cipher/ecc/keys/privateKey.pem', 'rb') as p:
             sk = ecdsa.SigningKey.from_pem(p.read())
 
