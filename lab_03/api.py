@@ -63,7 +63,7 @@
 #     return jsonify({'is_verified': is_verified})
 
 from flask import Flask, request, jsonify
-from cipher.RSA import RSACipher
+from cipher.rsa import RSACipher
 from cipher.ecc import ECCCipher
 
 app = Flask(__name__)
